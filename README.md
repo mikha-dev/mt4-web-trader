@@ -4,7 +4,9 @@ Backend part of web trader based on mt4 manager api
 # Endpoints
 
 ## Symbols
+
 GET /symbols
+
 retrun:
 `
 {
@@ -13,8 +15,11 @@ retrun:
 `
 
 ## Symbols history data
+
 GET /symbols/{symbol}/{period}/{from}/{count}
+
 return:
+
 `
 {
   "symbol": "EURUSD",
@@ -34,9 +39,13 @@ return:
 `
 
 ## User authorize
+
 POST /auth/login
+
 params: login, passowrd
+
 returns: 
+
 `
 {
   "code": 0,
@@ -46,9 +55,13 @@ returns:
 `
 
 ## Trades. Returns live trades
+
 GET trades/{login}
+
 headers: Authorization {token}
+
 returns:
+
 `{
   "close_price": 0,
   "close_time": 0,
@@ -69,9 +82,13 @@ returns:
 }`
 
 ## Trades. Update open trade
+
 headers: Authorization {token}
+
 PATCH trades/update
+
 params:
+
 `
 {
   "price": 1.1456,
@@ -80,23 +97,31 @@ params:
   "tp": 1.1456
 }
 `
+
 return:
+
 `{
   "code": 400,
   "message": "status bad request"
 }`
 
 ## Trades. CLose open trade
+
 PATCH /trades/close
+
 headers: Authorization {token}
+
 params:
+
 `
 {
   "ticket": 101,
   "volume": 0.1
 }
 `
+
 return:
+
 `
 {
   "code": 400,
@@ -107,10 +132,15 @@ return:
 # Websocket endponts
 
 ## Quotes
+
 real-time quotes
+
 path: /ws/quotes
+
 header: manager token
+
 data:
+
 `
 {
 	"symbol": "EURUSD",
@@ -121,10 +151,15 @@ data:
 `
 
 ## Trades
+
 real-time event of trade. open, close, modify
+
 path: /ws/trades
+
 header: token
+
 data:
+
 `
 {
 	"ticket" 1,
@@ -146,10 +181,15 @@ data:
 `
 
 ## Trade Profits
+
 real-time event of each trade P/L update
+
 path: /ws/trade_profits
+
 header: token
+
 data:
+
 `
 {
   "ticket": 12123,
@@ -158,10 +198,15 @@ data:
 `
 
 ## Margins
+
 real-time update of user marging, balance,
+
 path: /ws/margins
+
 header: token
+
 data:
+
 `
 {
   "balance": 12.22
