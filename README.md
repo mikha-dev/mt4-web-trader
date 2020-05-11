@@ -10,7 +10,7 @@ GET /symbols
 retrun:
 ```json
 {
-  ["EURUSD", "GBPUSD"]
+  "data": ["EURUSD","GBPUSD"]
 }
 ```
 
@@ -23,7 +23,7 @@ return:
 ```json
 {
   "symbol": "EURUSD",
-  "period": M1,
+  "period": "M1",
   "data": [
   {
     "time": 1231313,
@@ -149,7 +149,7 @@ data:
 {
 	"symbol": "EURUSD",
 	"ask": 1.1212,
-	"bid": 1.1.11,
+	"bid": 1.111,
 	"time": 123123213
 }
 ```
@@ -166,7 +166,7 @@ data:
 
 ```json
 {
-	"ticket" 1,
+	"ticket": 1,
 	"symbol": "",
 	"digits": 4,
 	"cmd": 1,
@@ -213,7 +213,7 @@ data:
 
 ```json
 {
-  "balance": 12.22
+  "balance": 12.22,
   "margin": 23.22,
   "free_margin": 32.23
 }
