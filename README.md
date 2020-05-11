@@ -8,11 +8,11 @@ Backend part of web trader based on mt4 manager api
 GET /symbols
 
 retrun:
-`
+```json
 {
   ["EURUSD", "GBPUSD"]
 }
-`
+```
 
 ## Symbols history data
 
@@ -20,7 +20,7 @@ GET /symbols/{symbol}/{period}/{from}/{count}
 
 return:
 
-`
+```json
 {
   "symbol": "EURUSD",
   "period": M1,
@@ -36,7 +36,7 @@ return:
   }
   ]
 }
-`
+```
 
 ## User authorize
 
@@ -46,13 +46,13 @@ params: login, passowrd
 
 returns: 
 
-`
+```json
 {
   "code": 0,
   "expire": "string",
   "token": "string"
 }
-`
+```
 
 ## Trades. Returns live trades
 
@@ -62,7 +62,8 @@ headers: Authorization {token}
 
 returns:
 
-`{
+```json
+{
   "close_price": 0,
   "close_time": 0,
   "cmd": 0,
@@ -79,7 +80,8 @@ returns:
   "ticket": 0,
   "tp": 0,
   "volume": 0
-}`
+}
+```
 
 ## Trades. Update open trade
 
@@ -89,21 +91,23 @@ PATCH trades/update
 
 params:
 
-`
+```json
 {
   "price": 1.1456,
   "sl": 1.1456,
   "ticket": 101,
   "tp": 1.1456
 }
-`
+```
 
 return:
 
-`{
+```json
+{
   "code": 400,
   "message": "status bad request"
-}`
+}
+```
 
 ## Trades. CLose open trade
 
@@ -113,21 +117,21 @@ headers: Authorization {token}
 
 params:
 
-`
+```json
 {
   "ticket": 101,
   "volume": 0.1
 }
-`
+```
 
 return:
 
-`
+```json
 {
   "code": 400,
   "message": "status bad request"
 }
-`
+```
 
 # Websocket endponts
 
@@ -141,14 +145,14 @@ header: manager token
 
 data:
 
-`
+```json
 {
 	"symbol": "EURUSD",
 	"ask": 1.1212,
 	"bid": 1.1.11,
 	"time": 123123213
 }
-`
+```
 
 ## Trades
 
@@ -160,7 +164,7 @@ header: token
 
 data:
 
-`
+```json
 {
 	"ticket" 1,
 	"symbol": "",
@@ -178,7 +182,7 @@ data:
 	"profit": 45.44,
 	"magic": 123
 }
-`
+```
 
 ## Trade Profits
 
@@ -190,12 +194,12 @@ header: token
 
 data:
 
-`
+```json
 {
   "ticket": 12123,
   "pl": 12.23
 }
-`
+```
 
 ## Margins
 
@@ -207,10 +211,10 @@ header: token
 
 data:
 
-`
+```json
 {
   "balance": 12.22
   "margin": 23.22,
   "free_margin": 32.23
 }
-`
+```
